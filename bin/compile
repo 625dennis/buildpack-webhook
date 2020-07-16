@@ -24,4 +24,4 @@ function export_env_vars() {
 
 export_env_vars
 echo "-----> Running curl $BUILDPACK_WEBHOOK_URL"
-curl -X POST -H 'Content-type: application/json' --data "{\"embed\": {\"title\": \"[$APP_NAME] starting deploy\", \"description\": \"sha: $SOURCE_VERSION\", \"url\": \"https://console.gigalixir.com/#/apps/$APP_NAME\"}, \"username\": \"$DISCORD_USERNAME\"}" "$BUILDPACK_WEBHOOK_URL"
+curl -X POST -H 'Content-type: application/json' --data "{\"embeds\": [{\"title\": \"[$APP_NAME] starting deploy\", \"description\": \"sha: $SOURCE_VERSION\", \"url\": \"https://console.gigalixir.com/#/apps/$APP_NAME\"}], \"username\": \"$DISCORD_USERNAME\"}" "$BUILDPACK_WEBHOOK_URL"
